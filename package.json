@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-  "build": "ng build --prod --base-href https://yhando24.github.io/top-collegues-front/",
+    "build": "ng build --prod --base-href https://yhando24.github.io/top-collegues-front/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -19,6 +19,8 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^4.1.0",
+    "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
