@@ -1,11 +1,14 @@
 import { Avis } from './../models';
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { Collegue } from '../models';
+import { ScorePipe } from '../pipes/score.pipe';
 
 @Component({
+  providers: [ScorePipe],
   selector: 'app-collegue',
   templateUrl: './collegue.component.html',
-  styleUrls: ['./collegue.component.css']
+  styleUrls: ['./collegue.component.css'],
+
 })
 export class CollegueComponent implements OnInit {
 @Input() c : Collegue;
@@ -29,7 +32,7 @@ desactiverBoutonJaimePas: boolean = false;
       } else {
         this.desactiverBoutonJaimePas = false;
       }
-   
+
     }else{
       this.c.score -= 100;
       if (this.c.score <= -1000) {
@@ -46,5 +49,5 @@ desactiverBoutonJaimePas: boolean = false;
 
   }
 
-        
+
 }

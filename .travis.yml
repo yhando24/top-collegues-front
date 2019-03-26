@@ -13,4 +13,6 @@ deploy:
   on:
     branch: master
 notifications:
-  email: false
+  email: - youcef.handoura@gmail.com
+   on_success: always # default: change
+    on_failure: always # default: always
