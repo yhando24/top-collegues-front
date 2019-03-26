@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { listeCollegues } from '../liste-collegues-component/mock';
 import { Collegue } from '../models';
 
+import { DataService } from '../service/data.service';
+
 @Component({
   selector: 'app-accueil-component',
   templateUrl: './accueil-component.component.html',
@@ -9,16 +11,14 @@ import { Collegue } from '../models';
 })
 export class AccueilComponentComponent implements OnInit {
 
-  collegues: Collegue[] = listeCollegues;
+  collegues: Collegue[];
 
 
 
-  constructor() { }
+  constructor(private _srv: DataService) { }
 
   ngOnInit() {
-
-
-
+    this.collegues = this._srv.lister();
   }
 
 

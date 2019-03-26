@@ -1,0 +1,16 @@
+
+
+<h2 style='text-align: center'>Historiques votes</h2>
+
+
+<div *ngFor="let votes of listeVotes"
+  style="border : 2px solid black; text-align: center;">
+
+<img [src]="votes.collegue.photoUrl" width=15%>
+<div [ngSwitch]="votes.avis">
+{{votes.collegue.pseudo}} est
+  <p *ngSwitchCase=avis.AIMER>aimé</p>
+  <p *ngSwitchCase="avis.DETESTER">detesté</p>
+elle a desormais un score de {{votes.collegue.score}}
+</div>
+</div>
