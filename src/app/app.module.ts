@@ -6,13 +6,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdCarouselBasicComponent } from './ngbd-carousel-basic/ngbd-carousel-basic.component';
 import { AvisComponent } from './avis/avis.component';
 import { CollegueComponent } from './collegue/collegue.component';
+import { ListeColleguesComponentComponent } from './liste-collegues-component/liste-collegues-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NgbdCarouselBasicComponent,
     AvisComponent,
-    CollegueComponent
+    CollegueComponent,
+    ListeColleguesComponentComponent
   ],
   imports: [
     BrowserModule, NgbModule
