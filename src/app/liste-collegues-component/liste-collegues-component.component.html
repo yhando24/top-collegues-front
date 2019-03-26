@@ -1,13 +1,13 @@
 <div style=" display: flex; flex-direction: row; width: 100%">
   <div *ngFor="let collegue of cols | slice:(page-1)*3:(page*3)" style="border : 2px solid black; text-align: center; width: 33%">
 
-<app-collegue [c]="collegue" ></app-collegue>
+    <app-collegue [c]="collegue" ></app-collegue>
 
+  </div>
 </div>
-<p>page : {{page}}</p>
-<p> page max </p>
-<div *ngFor="let pageActu of pages">
+<a *ngFor="let pageActu of pages">
   <button (click)="changePage(pageActu)"> {{pageActu}}</button>
 
-</div>
-</div>
+</a>
+
+
