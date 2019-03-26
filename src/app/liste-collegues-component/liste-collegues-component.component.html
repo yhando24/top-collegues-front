@@ -5,6 +5,10 @@
 
   </div>
 </div>
+
+<ngb-pagination [collectionSize]="cols.length" [pageSize]="3" [(page)]="page" size="lg"
+  [directionLinks]="false"></ngb-pagination>
+
 <a *ngFor="let pageActu of pages">
   <button (click)="changePage(pageActu)"> {{pageActu}}</button>
 
