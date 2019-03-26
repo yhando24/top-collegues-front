@@ -1,0 +1,6 @@
+<img
+  [src]="c.photoUrl">
+  <p>{{c.pseudo}}</p>
+ 
+    <p>{{c.score}}</p>         <!--   nom de la variable dans collegue et nom de la variable recuperer dans avis -->
+<app-avis (change)="avis($event)" [desactiverBoutonJaimePas] = "desactiverBoutonJaimePas"  [desactiverBoutonJaime] ="desactiverBoutonJaime"></app-avis>
