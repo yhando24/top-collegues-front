@@ -1,18 +1,22 @@
 
 
-<h2  style="border : 2px solid black; background-color: grey; text-align: center;">Historiques votes</h2>
+    <h5 class="mt-0 mb-1" style="text-align: center; background-color: #563d7c;  color: #fff;">Historique des votes</h5>
+    <ul class="list-unstyled">
+
+  <li  class="media" *ngFor="let votes of listeVotes; let i = index" style="border-bottom: 1px solid black; text-align: center;">
+
+    <img  class="mr-3" [src]="votes.collegue.photoUrl" width="15%">
+    <div [ngSwitch]="votes.avis">
+      <h5 class="mt-0 mb-1">
+      {{votes.collegue.pseudo}} est
+      <span *ngSwitchCase=avis.AIMER>aimé.</span>
+      <span *ngSwitchCase="avis.DETESTER">detesté.</span></h5>
+      il a desormais un score de {{votes.collegue.score}}
+      <p><button type="button" class="btn-secondary btn-xs" (click)="Supprimer(i)">Supprimer</button></p>
+    </div>
+  </li>
 
 
-<div *ngFor="let votes of listeVotes; let i = index"
-  style="border : 2px solid black; text-align: center;">
-<div [hidden]="votes.supprimer">
-<img [src]="votes.collegue.photoUrl" width=15%>
-<div [ngSwitch]="votes.avis">
-{{votes.collegue.pseudo}} est
-  <p *ngSwitchCase=avis.AIMER>aimé</p>
-  <p *ngSwitchCase="avis.DETESTER">detesté</p>
-elle a desormais un score de {{votes.collegue.score}}
-<p><button type="button" class="btn btn-secondary" (click)="Supprimer(i)">Supprimer</button></p>
-</div>
-</div>
-</div>
+
+
+

@@ -1,9 +1,15 @@
 
 
-<img
-  [src]="c.photoUrl" width=100%; height=80%>
-<p>{{ c.pseudo | uppercase }}</p>
-<p>{{ c.score | score }}</p>
+  <img class="card-img-top"  [src]="c.photoUrl" alt="Card image cap">
+  <div class="card-body"  style="text-align: center">
+    <h5 class="card-title">{{ c.pseudo | uppercase }}</h5>
+    <p class="card-text"><p>{{ c.score | score }}</p>
+    <p class="card-text"><small class="text-muted"><app-avis (change)="avis($event)" [desactiverBoutonJaimePas]="desactiverBoutonJaimePas"
+      [desactiverBoutonJaime]="desactiverBoutonJaime"></app-avis></small></p>
+  </div>
+
+
+
      <!--   nom de la variable dans collegue et nom de la variable recuperer dans avis -->
-<app-avis (change)="avis($event)" [desactiverBoutonJaimePas] = "desactiverBoutonJaimePas"  [desactiverBoutonJaime] ="desactiverBoutonJaime"></app-avis>
+
 
