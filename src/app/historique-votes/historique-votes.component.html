@@ -11,7 +11,7 @@
       {{votes.collegue.pseudo}} est
       <span *ngSwitchCase=avis.AIMER>aimé.</span>
       <span *ngSwitchCase="avis.DETESTER">detesté.</span></h5>
-      il a desormais un score de {{votes.collegue.score}}
+        {{votes.collegue.pseudo}} a desormais un score de {{votes.collegue.score}}
       <p><button type="button" class="btn-secondary btn-xs" (click)="Supprimer(i)">Supprimer</button></p>
     </div>
   </li>

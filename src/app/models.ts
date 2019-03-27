@@ -2,7 +2,6 @@ export interface Collegue {
     pseudo : string;
     score : number;
     photoUrl : string;
-    sexe : string;
 }
 
 export enum Avis {
