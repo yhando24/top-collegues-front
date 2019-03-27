@@ -18,5 +18,8 @@ export class HistoriqueVotesComponent implements OnInit {
   ngOnInit() {
     this.listeVotes = this._srv.listerVotes();
   }
+  Supprimer(i:number){
+    this.listeVotes.splice(i, 1);
+   }
 
 }

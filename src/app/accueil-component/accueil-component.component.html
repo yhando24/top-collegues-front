@@ -1,10 +1,10 @@
 
-<button type="button" class="btn btn-info" style="box-shadow: 10px -10px 15px black; margin-top:10px; ">Rafraichir la liste</button>
+<button type="button"  onclick="javascript:location.reload();" class="btn btn-info" style="box-shadow: 10px -10px 15px black; margin-top:10px; ">Rafraichir la liste</button>
 <div class='row'>
-  <div class='col-9'>
+  <div class='col-mg-9'>
 <app-liste-collegues-component [cols]="collegues"></app-liste-collegues-component>
 </div>
-<div class='col-3'>
+<div class='col-mg-3'>
 <app-historique-votes></app-historique-votes>
 </div>
 </div>
