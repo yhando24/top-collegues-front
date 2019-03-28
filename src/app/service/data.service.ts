@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { listeCollegues } from '../liste-collegues-component/mock';
 import { Collegue, Avis, Vote } from '../models';
 import { Observable, of, from, Subject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 @Injectable({
@@ -26,16 +27,11 @@ export class DataService {
 
 
   donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue>{
-    if (avis === Avis.AIMER){
-      collegue.score += 10;
-    } else {
-      collegue.score -= 5;
-    }
-    this.listeVotes.next({"collegue": collegue , "avis" : avis});
-
 
     const URL_BACKEND = environment.backendUrl;
-    return this._http.patch<Collegue>(URL_BACKEND + 'collegues/' + collegue.pseudo,{action: avis});
+
+    return this._http.patch<Collegue>(URL_BACKEND + 'collegues/' + collegue.pseudo,{action: avis}).pipe(
+    tap(c => this.listeVotes.next({ "collegue": c, "avis": avis } )));
   }
   get listerVotes(): Observable<Vote>{
   return  this.listeVotes.asObservable();
