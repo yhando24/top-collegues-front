@@ -1,4 +1,4 @@
-
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 
     <h5 class="mt-0 mb-1" style="text-align: center; background-color: #563d7c;  color: #fff;">Historique des votes</h5>
     <ul class="list-unstyled">
@@ -9,8 +9,8 @@
     <div [ngSwitch]="votes.avis">
       <h5 class="mt-0 mb-1">
       {{votes.collegue.pseudo}} est
-      <span *ngSwitchCase=avis.AIMER>aimé.</span>
-      <span *ngSwitchCase="avis.DETESTER">detesté.</span></h5>
+      <span *ngSwitchCase=avis.AIMER>aimé.<i class="em em-sunglasses"></i> </span>
+      <span *ngSwitchCase="avis.DETESTER">detesté.<i class="em em-angry"></i></span></h5>
         {{votes.collegue.pseudo}} a desormais un score de {{votes.collegue.score}}
       <p><button type="button" class="btn-secondary btn-xs" (click)="Supprimer(i)">Supprimer</button></p>
     </div>

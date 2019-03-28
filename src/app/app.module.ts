@@ -10,6 +10,8 @@ import { ListeColleguesComponentComponent } from './liste-collegues-component/li
 import { AccueilComponentComponent } from './accueil-component/accueil-component.component';
 import { ScorePipe } from './pipes/score.pipe';
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CompteurVoteComponent } from './compteur-vote/compteur-vote.component';
 
 @NgModule({
   declarations: [
@@ -20,10 +22,11 @@ import { HistoriqueVotesComponent } from './historique-votes/historique-votes.co
     ListeColleguesComponentComponent,
     AccueilComponentComponent,
     ScorePipe,
-    HistoriqueVotesComponent
+    HistoriqueVotesComponent,
+    CompteurVoteComponent
   ],
   imports: [
-    BrowserModule, NgbModule
+    BrowserModule, NgbModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

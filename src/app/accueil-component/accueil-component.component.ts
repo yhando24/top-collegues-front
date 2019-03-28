@@ -18,7 +18,10 @@ export class AccueilComponentComponent implements OnInit {
   constructor(private _srv: DataService) { }
 
   ngOnInit() {
-    this.collegues = this._srv.lister();
+   this._srv.lister().subscribe(
+     value => this.collegues = value,
+      error => console.log(error),
+      () => console.log('terminé'));
   }
 
 

@@ -1,7 +1,8 @@
-import { Avis } from './../models';
-import { Component, OnInit } from '@angular/core';
+import { Avis, Vote } from './../models';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from '../service/data.service';
-import { Vote } from '../models';
+
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -9,17 +10,34 @@ import { Vote } from '../models';
   templateUrl: './historique-votes.component.html',
   styleUrls: ['./historique-votes.component.css']
 })
-export class HistoriqueVotesComponent implements OnInit {
+export class HistoriqueVotesComponent implements OnDestroy {
 
-  listeVotes : Vote[];
+  actionSub: Subscription;
+  listeVotes : Vote[] = [];
   avis = Avis;
-  constructor(private _srv: DataService) { }
+  constructor(private _srv: DataService) {
+    this.actionSub = this._srv.listerVotes.subscribe(
+    (data :Vote) =>{
+      this.listeVotes.unshift(data);
+    },
+    error => {
+     console.log('erreur')
+    },
 
-  ngOnInit() {
-    this.listeVotes = this._srv.listerVotes();
+      () => {
+
+      });
   }
+
+
+
   Supprimer(i:number){
     this.listeVotes.splice(i, 1);
    }
+
+  ngOnDestroy() {
+    // désabonnement du composant avant sa destruction
+    this.actionSub.unsubscribe();
+  }
 
 }

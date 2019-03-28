@@ -22,7 +22,18 @@ desactiverBoutonJaimePas: boolean = false;
   }
 
   avis(unAvis: Avis) {
-    this.c = this._srv.donnerUnAvis(this.c, unAvis);
+   this._srv.donnerUnAvis(this.c, unAvis).subscribe(
+       (data) => {
+this.c = data
+       },
+       error => {
+         console.log('erreur')
+       },
+
+       () => {
+
+       });
+
     if (unAvis == Avis.AIMER){
       if(this.c.score >= 1000){
         this.desactiverBoutonJaime = true;
