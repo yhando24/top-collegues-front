@@ -5,6 +5,7 @@ import { Observable, of, from, Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { CollegueAjouter } from '../nouveau-collegue-template-form/nouveau-collegue-template-form.component';
 @Injectable({
   providedIn: 'root'
 })
@@ -25,6 +26,10 @@ export class DataService {
     return this._http.get<Collegue []>(URL_BACKEND+'collegues');
   }
 
+  envoiBack(c :CollegueAjouter): Observable<CollegueAjouter>{
+    const URL_BACKEND = environment.backendUrl;
+    return this._http.post<CollegueAjouter>(URL_BACKEND+"collegues/", c);
+  }
 
   donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue>{
 

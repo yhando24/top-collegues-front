@@ -1,0 +1,17 @@
+<h1>Ajout d'un collègue </h1>
+<form (ngSubmit)="submit()" [ngFormOptions]="{updateOn: 'submit'}" >
+
+  <label>Matricule : </label>
+  <input  name="matricule"  [(ngModel)]="c.matricule" name="matricule">
+  <br>
+  <label>Pseudo :   </label><input  [(ngModel)]="c.pseudo" name="pseudo">
+    <br>
+  <label>Url Image :</label><input  [(ngModel)]="c.photoUrl" name="photoUrl">
+  <br>
+  <button type="submit">Submit</button>
+
+    <p *ngIf="error.length>0" style="color:red">
+{{error}}
+    </p>
+
+</form>
