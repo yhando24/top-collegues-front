@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../service/data.service';
+import { Router } from '@angular/router';
 import { empty } from 'rxjs';
 
 
@@ -18,7 +19,7 @@ export class CollegueAjouter {
 export class NouveauCollegueTemplateFormComponent implements OnInit {
   error : string;
   c : CollegueAjouter = new CollegueAjouter();
-  constructor(private _srv: DataService) { }
+  constructor(private _srv: DataService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -26,6 +27,8 @@ export class NouveauCollegueTemplateFormComponent implements OnInit {
     this._srv.envoiBack(this.c).subscribe(
         (data: CollegueAjouter) => {
         this.error='';
+        this.router.navigate(['/accueil']);
+
         },
         error => {
             this.error = error.error;

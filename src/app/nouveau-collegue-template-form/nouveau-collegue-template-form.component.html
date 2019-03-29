@@ -13,9 +13,11 @@
 
   </div>
 
+
+
   <div class="col-md-4 mb-3">
     <label>Pseudo : </label>
-    <input [(ngModel)]="c.pseudo" name="pseudo" #ps="ngModel" required minlength="3">
+    <input [(ngModel)]="c.nom" name="nom" #ps="ngModel" required minlength="3">
 
 
       <p style="color : red" *ngIf="f.errors != null">{{f.errors.errorIdentique}}</p>
@@ -24,7 +26,7 @@
 
   <div class="col-md-4 mb-3">
   <label>Url Image :</label>
-  <input [(ngModel)]="c.photoUrl" name="photoUrl" placeholder="Optionnel">
+  <input [(ngModel)]="c.photo" name="photo" placeholder="Optionnel">
 
     <div class="valid-feedback">
     </div>
