@@ -23,7 +23,7 @@ import { MenuComponentComponent } from './menu-component/menu-component.componen
 export const ROUTES: Routes = [
   { path: 'accueil', component: AccueilComponentComponent },
   { path: 'ajout-collegues', component: NouveauCollegueTemplateFormComponent },
-  { path: '', pathMatch: 'full', redirectTo: '/a' }
+  { path: '', pathMatch: 'full', redirectTo: '/accueil' }
 ];
 
 @NgModule({
