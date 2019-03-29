@@ -7,7 +7,7 @@ import { Collegue } from '../models';
   styleUrls: ['./liste-collegues-component.component.css']
 })
 export class ListeColleguesComponentComponent implements OnInit {
-  @Input() cols: Collegue [];
+  @Input() cols: Collegue [] ;
    constructor() { }
   page: number = 1;
   pages = [];

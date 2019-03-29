@@ -11,7 +11,7 @@ import { DataService } from '../service/data.service';
 })
 export class AccueilComponentComponent implements OnInit {
 
-  collegues: Collegue[];
+  collegues: Collegue[] = [];
 
 
 

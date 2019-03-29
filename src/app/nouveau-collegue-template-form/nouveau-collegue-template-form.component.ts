@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../service/data.service';
+import { empty } from 'rxjs';
 
 
 export class CollegueAjouter {
@@ -24,10 +25,11 @@ export class NouveauCollegueTemplateFormComponent implements OnInit {
   submit(){
     this._srv.envoiBack(this.c).subscribe(
         (data: CollegueAjouter) => {
-          this.c = data;
+        this.error='';
         },
         error => {
-            this.error = "Personne avec ce matricule n'existe"
+            this.error = error.error;
+          console.log(error);
         },
 
         () => {
