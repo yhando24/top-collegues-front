@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CompteurVoteComponent } from './compteur-vote/compteur-vote.component';
 import { FormsModule } from '@angular/forms';
 import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-template-form/nouveau-collegue-template-form.component';
+import { PseudoMatriculeValidatorDirective } from './validators/pseudo-matricule-validator.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-templat
     ScorePipe,
     HistoriqueVotesComponent,
     CompteurVoteComponent,
-    NouveauCollegueTemplateFormComponent
+    NouveauCollegueTemplateFormComponent,
+    PseudoMatriculeValidatorDirective
   ],
   imports: [
     BrowserModule, NgbModule, HttpClientModule,
