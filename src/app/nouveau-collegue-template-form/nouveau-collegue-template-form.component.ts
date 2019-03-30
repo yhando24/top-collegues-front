@@ -5,9 +5,9 @@ import { empty } from 'rxjs';
 
 
 export class CollegueAjouter {
-  pseudo: string;
+  nom: string;
   matricule: number;
-  photoUrl: string;
+  photo: string;
 }
 
 
