@@ -24,6 +24,7 @@ export class NouveauCollegueTemplateFormComponent implements OnInit {
   ngOnInit() {
   }
   submit(){
+    console.log(this.c.matricule + this.c.nom)
     this._srv.envoiBack(this.c).subscribe(
         (data: CollegueAjouter) => {
         this.error='';

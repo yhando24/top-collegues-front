@@ -42,6 +42,13 @@ export class DataService {
   return  this.listeVotes.asObservable();
   }
 
+  checkMatricule(m) : Observable<boolean>{
+
+      const URL_BACKEND = environment.backendUrl;
+      return this._http.get<boolean>(URL_BACKEND+'collegues/'+m);
+
+  }
+
 
 
 }

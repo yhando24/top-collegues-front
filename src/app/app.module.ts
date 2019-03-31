@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-template-form/nouveau-collegue-template-form.component';
 import { PseudoMatriculeValidatorDirective } from './validators/pseudo-matricule-validator.directive';
 import { MenuComponentComponent } from './menu-component/menu-component.component';
+import { MatriculeValidatorDirective } from './validators/matricule-validator.directive';
 
 
 
@@ -39,7 +40,8 @@ export const ROUTES: Routes = [
     CompteurVoteComponent,
     NouveauCollegueTemplateFormComponent,
     PseudoMatriculeValidatorDirective,
-    MenuComponentComponent
+    MenuComponentComponent,
+    MatriculeValidatorDirective
   ],
   imports: [
     BrowserModule, NgbModule, HttpClientModule,
