@@ -18,13 +18,15 @@ import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-templat
 import { PseudoMatriculeValidatorDirective } from './validators/pseudo-matricule-validator.directive';
 import { MenuComponentComponent } from './menu-component/menu-component.component';
 import { MatriculeValidatorDirective } from './validators/matricule-validator.directive';
+import { PresentationCollegueComponent } from './presentation-collegue/presentation-collegue.component';
 
 
 
 export const ROUTES: Routes = [
   { path: 'accueil', component: AccueilComponentComponent },
   { path: 'ajout-collegues', component: NouveauCollegueTemplateFormComponent },
-  { path: '', pathMatch: 'full', redirectTo: '/accueil' }
+  { path: '', pathMatch: 'full', redirectTo: '/accueil' },
+  { path: 'collegues/:pseudo', component: PresentationCollegueComponent}
 ];
 
 @NgModule({
@@ -41,7 +43,8 @@ export const ROUTES: Routes = [
     NouveauCollegueTemplateFormComponent,
     PseudoMatriculeValidatorDirective,
     MenuComponentComponent,
-    MatriculeValidatorDirective
+    MatriculeValidatorDirective,
+    PresentationCollegueComponent
   ],
   imports: [
     BrowserModule, NgbModule, HttpClientModule,

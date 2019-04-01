@@ -1,0 +1,13 @@
+<div class="card" style="width:500px; margin: auto; text-align: center">
+  <img class="card-img-top" *ngIf="collegue.photo" [src]="collegue.photo" alt="Card image">
+  <div class="card-body">
+        <h5>{{collegue.score}}</h5>
+    <h4 class="card-title">{{collegue.pseudo}} {{collegue.prenom}}</h4>
+
+
+        <p class="card-text"> Adresse : {{collegue.adresse}}</p>
+        <p class="card-text"> Email : {{collegue.email}}</p>
+
+
+  </div>
+</div>

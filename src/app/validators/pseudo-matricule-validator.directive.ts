@@ -10,8 +10,8 @@ export class PseudoMatriculeValidatorDirective implements Validator {
 
   validate(control: AbstractControl): ValidationErrors | null {
 
-    console.log(control );
-    if (control.value.matricule !== control.value.pseudo || control.value.pseudo == null || control.value.matricule == null){
+    console.log(control.value.matricule + " et " + control.value.nom );
+    if (control.value.matricule != control.value.nom || control.value.nom == null || control.value.matricule == null){
       console.log('ok !');
       return null;
 

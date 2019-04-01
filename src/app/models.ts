@@ -1,7 +1,10 @@
 export interface Collegue {
     pseudo : string;
     score : number;
-    photoUrl : string;
+    photo? : string;
+    prenom : string;
+    email : string;
+    adresse : string;
 }
 
 

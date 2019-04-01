@@ -1,6 +1,6 @@
 
 
-  <img class="card-img-top"  [src]="c.photoUrl" alt="Card image cap">
+ <a routerLink='/collegues/{{c.pseudo}}' ><img class="card-img-top"  [src]="c.photo" alt="Card image cap"> </a>
   <div class="card-body"  style="text-align: center">
     <h5 class="card-title">{{ c.pseudo | uppercase }}</h5>
     <p class="card-text"><p>{{ c.score | score }}</p>
