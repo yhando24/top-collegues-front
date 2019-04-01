@@ -5,9 +5,9 @@
 
   <div class="col-md-4 mb-3">
     <label>Matricule : </label>
-    <input name="matricule" [(ngModel)]="c.matricule" name="matricule" #mat="ngModel"  required>
-    <div *ngIf="mat.errors" class = "error">
-{{mat.errors | json }}
+    <input name="matricule" appMatriculeValidator [(ngModel)]="c.matricule" name="matricule" #mat="ngModel"  required>
+    <div *ngIf="mat.errors" style ="color: red"class = "error">
+{{mat.errors.error}}
       </div>
       <p *ngIf="error && error.length>0" style="color:red">
         {{error}}

@@ -16,16 +16,21 @@ export class MatriculeValidatorDirective implements AsyncValidator {
 
     console.log('ICI :::' + control.value);
     let validerror : ValidationErrors = { error: 'Ce matricule est deja attribué a un collegue'};
-    let re = Observable.create(observer => {
-     setTimeout(()=>  observer.next(validerror), 100)
-     setTimeout(()=>  observer.complete(), 200)
- })
+    let re;
     console.log(control);
-    this._srv.checkMatricule(control.value).subscribe(
+   return this._srv.checkMatricule(control.value).pipe(
+     map(value => value ? validerror : null)
+   );
+
+   /*
+   .subscribe(
       (data: boolean) => {
         console.log(data)
         if(data == true){
-
+        re = Observable.create(observer => {
+            setTimeout(() => observer.next(validerror), 1000)
+            setTimeout(() => observer.complete(), 2000)
+          })
 
         }else{
           re = null;
@@ -42,7 +47,7 @@ export class MatriculeValidatorDirective implements AsyncValidator {
         value => console.log('ok'),
         error => console.log('error'),
         () => console.log('terminé'));
-
+*/
 
   }
   registerOnValidatorChange?(fn: () => void): void {
