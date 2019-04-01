@@ -5,7 +5,7 @@
 
   <li  class="media" *ngFor="let votes of listeVotes; let i = index" style="border-bottom: 1px solid black; text-align: center;">
 
-    <img  class="mr-3" [src]="votes.collegue.photoUrl" width="15%">
+    <img  class="mr-3" [src]="votes.collegue.photo" width="15%">
     <div [ngSwitch]="votes.avis">
       <h5 class="mt-0 mb-1">
       {{votes.collegue.pseudo}} est
